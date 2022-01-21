@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="Zapf.ico" type="image/x-icon">
+
+    <style>
+    .background 
+    {
+        background-color: Black;
+        font-family: Arial;
+        font-size: 25px;
+        color: white;   
+    }
+
+    .center 
+    {    
+     justify-content: center;
+     
+    }
+
+    .margin-top
+    {
+        margin-top: 100px;
+        margin-left: 50px;
+        
+    }
+    input[type="text"]
+{
+    font-size:24px;
+}
+
+            
+    
+    </style>
+    <script type="text/javascript">
+  
+   function berechnen () 
+   {
+
+    var ltr = document.getElementById("getankt").value;
+    ltr = ltr.replace(',','.')
+
+    var km = document.getElementById("gefahren").value;
+    km = km.replace(',','.')
+    
+    var vbr = ltr/km * 100 ;
+        
+        vbr = Math.round(vbr *100)/100.0;
+        
+        document.getElementById("verbrauch").value=vbr;
+   }
+
+
+</script>
+
+</head>
+
+<body class="background">
+<div class="center margin-top">
+      
+
+    
+<p>getankt Liter</p>
+<input type="text" id="getankt" required minlength="1" maxlength="6" size="5">
+
+<br><br>
+
+<p>gefahrene Kilometer</p>
+<input type="text" id="gefahren"  required minlength="1" maxlength="7"size="5">
+
+
+<br><br><br>
+
+<input type="button" value="berechnen" onClick="berechnen ()">
+<br><br>
+<p>Verbrauch Liter/100 Km</p>
+<input type="text" id="verbrauch" size="5" readonly>
+
+
+</body>
+</html>
